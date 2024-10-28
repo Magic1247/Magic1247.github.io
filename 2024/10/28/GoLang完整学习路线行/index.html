@@ -1,0 +1,484 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>GoLang完整学习路线 | 怀光长纵</title><meta name="keywords" content="Golang,服务端"><meta name="author" content="怀光"><meta name="copyright" content="怀光"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="GoLang完整学习路线"><meta name="application-name" content="GoLang完整学习路线"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="GoLang完整学习路线"><meta property="og:url" content="http://example.com/2024/10/28/GoLang%E5%AE%8C%E6%95%B4%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E8%A1%8C/index.html"><meta property="og:site_name" content="怀光长纵"><meta property="og:description" content="一、Go 基础入门1.1 基础语法 了解 Go 的起源、应用场景和开发环境搭建 Go 语言的变量、常量和数据类型（int、float、bool、string） 控制结构（if、for、switch、goto） 函数定义与使用（参数、返回值、多返回值、可变参数）  1.2 数据结构 数组与切片：声明、"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="http://example.com/img/default_back.png"><meta property="article:author" content="怀光"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/img/default_back.png"><meta name="description" content="一、Go 基础入门1.1 基础语法 了解 Go 的起源、应用场景和开发环境搭建 Go 语言的变量、常量和数据类型（int、float、bool、string） 控制结构（if、for、switch、goto） 函数定义与使用（参数、返回值、多返回值、可变参数）  1.2 数据结构 数组与切片：声明、"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2024/10/28/GoLang%E5%AE%8C%E6%95%B4%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E8%A1%8C/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 怀光","link":"链接: ","source":"来源: 怀光长纵","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '怀光长纵',
+  title: 'GoLang完整学习路线',
+  postAI: '',
+  pageFillDescription: '一、Go 基础入门, 1.1 基础语法, 1.2 数据结构, 1.3 Go 包与模块, 二、Go 语言进阶, 2.1 面向对象, 2.2 并发编程, 2.3 错误处理, 2.4 文件操作和网络编程, 三、Go Web 开发, 3.1 HTTP Web 服务器, 3.2 使用 Gin 框架开发 Web 服务, 3.3 GORM 数据库操作, 3.4 RESTful API 开发与项目整合, 四、项目实战, 4.1 项目架构与目录结构, 4.2 使用 Gin 和 GORM 构建 CRUD API 项目, 4.3 构建与测试, 4.4 Docker 容器化, 五、高级主题, 5.1 性能优化, 5.2 微服务架构, 5.3 日志与监控, 5.4 安全, 六、DevOps 实践, 6.1 自动化测试, 6.2 部署与发布, 6.3 监控与运维, 七、学习资源, 7.1 官方文档, 7.2 在线学习平台, 7.3 推荐书籍一基础入门基础语法了解的起源应用场景和开发环境搭建语言的变量常量和数据类型控制结构函数定义与使用参数返回值多返回值可变参数数据结构数组与切片声明初始化使用和内存结构映射声明初始化键值操作结构体定义使用嵌套和方法指针引用解引用指针传递包与模块使用标准库等自定义包与导入路径使用进行模块管理包的作用域与导出规则二语言进阶面向对象的方法与接口接口定义实现和接口嵌套接口在中的应用场景和最佳实践类型断言与类型转换并发编程基础与调度机制的使用和并发模型同步通信关闭语句和多路复用和包的使用错误处理的错误处理模式接口与包自定义错误与堆栈追踪和的使用及应用场景文件操作和网络编程文件读写操作和包的使用文件系统相关操作文件夹创建删除权限网络编程基础连接请求处理数据格式处理三开发服务器基本服务端编写路由与多路复用常用框架的使用中间件日志认证请求处理使用框架开发服务的安装与基本用法路由定义与分组中间件应用日志跨域错误处理请求参数解析路径参数查询参数表单参数中的数据处理与响应格式数据库操作安装与配置数据库连接池设置使用进行操作增删查改查询构建器等关系映射关联查询一对多多对多关系数据迁移与模型管理开发与项目整合设计的最佳实践使用与构建完整的服务常用路径与方法定义返回数据格式统一化错误处理项目结构规划控制器服务模型层四项目实战项目架构与目录结构项目最佳目录结构项目配置管理分层架构使用和构建项目基于的用户管理系统项目用户权限角色等模块设计路由分层与控制器实现使用管理数据模型和关联关系中间件集成跨域处理认证错误拦截构建与测试的测试框架与单元测试包基准测试和性能优化数据库与服务集成容器化基础命令和镜像构建的配置与使用容器内的日志与调试五高级主题性能优化内存优化逃逸分析与栈分配并发性能优化与锁优化调优工具微服务架构微服务架构的设计与通信框架和使用服务发现与负载均衡日志与监控日志收集与管理使用监控链路追踪安全应用中的常见安全漏洞防护和鉴权实现数据加密与签名六实践自动化测试持续集成与自动化测试自动化测试策略与测试覆盖率使用进行端到端测试部署与发布使用部署项目实践版本控制与发布策略监控与运维系统日志分析与错误排查基于和的监控运维自动化与健康检查七学习资源官方文档官方文档在线学习平台推荐书籍',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-10-28 15:34:18',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">怀光长纵</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Golang/" style="font-size: 1.05rem;">Golang<sup>5</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" style="font-size: 1.05rem;">服务端<sup>5</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">十月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" itemprop="url">服务端</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Golang/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Golang</span></a><a class="article-meta__tags" href="/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>服务端</span></a></span></div></div><h1 class="post-title" itemprop="name headline">GoLang完整学习路线</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-10-28T02:17:05.000Z" title="发表于 2024-10-28 10:17:05">2024-10-28</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-10-28T07:34:18.201Z" title="更新于 2024-10-28 15:34:18">2024-10-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为中国"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>中国</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/golang.jpg"></div></header><main id="blog-container"><div class="layout hide-aside" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2024/10/28/GoLang%E5%AE%8C%E6%95%B4%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E8%A1%8C/"><header><a class="post-meta-categories" href="/categories/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" itemprop="url">服务端</a><a href="/tags/Golang/" tabindex="-1" itemprop="url">Golang</a><a href="/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" tabindex="-1" itemprop="url">服务端</a><h1 id="CrawlerTitle" itemprop="name headline">GoLang完整学习路线</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">怀光</span><time itemprop="dateCreated datePublished" datetime="2024-10-28T02:17:05.000Z" title="发表于 2024-10-28 10:17:05">2024-10-28</time><time itemprop="dateCreated datePublished" datetime="2024-10-28T07:34:18.201Z" title="更新于 2024-10-28 15:34:18">2024-10-28</time></header><h2 id="一、Go-基础入门"><a href="#一、Go-基础入门" class="headerlink" title="一、Go 基础入门"></a>一、Go 基础入门</h2><h3 id="1-1-基础语法"><a href="#1-1-基础语法" class="headerlink" title="1.1 基础语法"></a>1.1 基础语法</h3><ul>
+<li>了解 Go 的起源、应用场景和开发环境搭建</li>
+<li>Go 语言的变量、常量和数据类型（<code>int</code>、<code>float</code>、<code>bool</code>、<code>string</code>）</li>
+<li>控制结构（<code>if</code>、<code>for</code>、<code>switch</code>、<code>goto</code>）</li>
+<li>函数定义与使用（参数、返回值、多返回值、可变参数）</li>
+</ul>
+<h3 id="1-2-数据结构"><a href="#1-2-数据结构" class="headerlink" title="1.2 数据结构"></a>1.2 数据结构</h3><ul>
+<li>数组与切片：声明、初始化、使用和内存结构</li>
+<li>Map（映射）：声明、初始化、键值操作</li>
+<li>结构体：定义、使用、嵌套和方法</li>
+<li>指针：引用、解引用、指针传递</li>
+</ul>
+<h3 id="1-3-Go-包与模块"><a href="#1-3-Go-包与模块" class="headerlink" title="1.3 Go 包与模块"></a>1.3 Go 包与模块</h3><ul>
+<li>使用标准库（<code>fmt</code>、<code>math</code>、<code>time</code> 等）</li>
+<li>自定义包与导入路径</li>
+<li>使用 <code>go mod</code> 进行模块管理</li>
+<li>包的作用域与导出规则</li>
+</ul>
+<hr>
+<h2 id="二、Go-语言进阶"><a href="#二、Go-语言进阶" class="headerlink" title="二、Go 语言进阶"></a>二、Go 语言进阶</h2><h3 id="2-1-面向对象"><a href="#2-1-面向对象" class="headerlink" title="2.1 面向对象"></a>2.1 面向对象</h3><ul>
+<li>Go 的方法与接口（接口定义、实现和接口嵌套）</li>
+<li>接口在 Go 中的应用场景和最佳实践</li>
+<li>类型断言与类型转换</li>
+</ul>
+<h3 id="2-2-并发编程"><a href="#2-2-并发编程" class="headerlink" title="2.2 并发编程"></a>2.2 并发编程</h3><ul>
+<li>Goroutine 基础与调度机制</li>
+<li>Channel 的使用和并发模型（同步、通信、关闭 channel）</li>
+<li><code>select</code> 语句和多路复用</li>
+<li>WaitGroup、Mutex 和 Sync 包的使用</li>
+</ul>
+<h3 id="2-3-错误处理"><a href="#2-3-错误处理" class="headerlink" title="2.3 错误处理"></a>2.3 错误处理</h3><ul>
+<li>Go 的错误处理模式 (<code>error</code> 接口与 <code>errors</code> 包)</li>
+<li>自定义错误与堆栈追踪</li>
+<li><code>defer</code>、<code>panic</code> 和 <code>recover</code> 的使用及应用场景</li>
+</ul>
+<h3 id="2-4-文件操作和网络编程"><a href="#2-4-文件操作和网络编程" class="headerlink" title="2.4 文件操作和网络编程"></a>2.4 文件操作和网络编程</h3><ul>
+<li>文件读写操作（<code>os</code> 和 <code>io</code> 包的使用）</li>
+<li>文件系统相关操作（文件夹创建、删除、权限）</li>
+<li>网络编程基础（TCP、UDP 连接，HTTP 请求处理）</li>
+<li>JSON、XML、CSV 数据格式处理</li>
+</ul>
+<hr>
+<h2 id="三、Go-Web-开发"><a href="#三、Go-Web-开发" class="headerlink" title="三、Go Web 开发"></a>三、Go Web 开发</h2><h3 id="3-1-HTTP-Web-服务器"><a href="#3-1-HTTP-Web-服务器" class="headerlink" title="3.1 HTTP Web 服务器"></a>3.1 HTTP Web 服务器</h3><ul>
+<li>基本 HTTP 服务端编写</li>
+<li>路由与多路复用</li>
+<li>常用 Web 框架（Gin、Echo、Fiber）的使用</li>
+<li>中间件（日志、认证、请求处理）</li>
+</ul>
+<h3 id="3-2-使用-Gin-框架开发-Web-服务"><a href="#3-2-使用-Gin-框架开发-Web-服务" class="headerlink" title="3.2 使用 Gin 框架开发 Web 服务"></a>3.2 使用 Gin 框架开发 Web 服务</h3><ul>
+<li>Gin 的安装与基本用法</li>
+<li>路由定义与分组</li>
+<li>中间件应用（日志、跨域、错误处理）</li>
+<li>请求参数解析（路径参数、查询参数、表单参数）</li>
+<li>Gin 中的 JSON 数据处理与响应格式</li>
+</ul>
+<h3 id="3-3-GORM-数据库操作"><a href="#3-3-GORM-数据库操作" class="headerlink" title="3.3 GORM 数据库操作"></a>3.3 GORM 数据库操作</h3><ul>
+<li>GORM 安装与配置（数据库连接池设置）</li>
+<li>使用 GORM 进行 CRUD 操作（增、删、查、改）</li>
+<li>查询构建器（Where、Select、Limit、Order 等）</li>
+<li>关系映射（关联查询、一对多、多对多关系）</li>
+<li>数据迁移与模型管理</li>
+</ul>
+<h3 id="3-4-RESTful-API-开发与项目整合"><a href="#3-4-RESTful-API-开发与项目整合" class="headerlink" title="3.4 RESTful API 开发与项目整合"></a>3.4 RESTful API 开发与项目整合</h3><ul>
+<li>设计 RESTful API 的最佳实践</li>
+<li>使用 Gin 与 GORM 构建完整的 API 服务</li>
+<li>常用 API 路径与方法定义（GET、POST、PUT、DELETE）</li>
+<li>返回数据格式统一化（JSON、错误处理）</li>
+<li>项目结构规划（控制器、服务、模型层）</li>
+</ul>
+<hr>
+<h2 id="四、项目实战"><a href="#四、项目实战" class="headerlink" title="四、项目实战"></a>四、项目实战</h2><h3 id="4-1-项目架构与目录结构"><a href="#4-1-项目架构与目录结构" class="headerlink" title="4.1 项目架构与目录结构"></a>4.1 项目架构与目录结构</h3><ul>
+<li>Go 项目最佳目录结构</li>
+<li>项目配置管理</li>
+<li>分层架构</li>
+</ul>
+<h3 id="4-2-使用-Gin-和-GORM-构建-CRUD-API-项目"><a href="#4-2-使用-Gin-和-GORM-构建-CRUD-API-项目" class="headerlink" title="4.2 使用 Gin 和 GORM 构建 CRUD API 项目"></a>4.2 使用 Gin 和 GORM 构建 CRUD API 项目</h3><ul>
+<li>基于 Gin + GORM 的用户管理系统项目</li>
+<li>用户、权限、角色等模块设计</li>
+<li>路由分层与控制器实现</li>
+<li>使用 GORM 管理数据模型和关联关系</li>
+<li>中间件集成（跨域处理、认证、错误拦截）</li>
+</ul>
+<h3 id="4-3-构建与测试"><a href="#4-3-构建与测试" class="headerlink" title="4.3 构建与测试"></a>4.3 构建与测试</h3><ul>
+<li>Go 的测试框架与单元测试（<code>testing</code> 包）</li>
+<li>基准测试（Benchmark）和性能优化</li>
+<li>Mock 数据库与服务</li>
+<li>CI&#x2F;CD 集成（GitHub Actions、GitLab CI）</li>
+</ul>
+<h3 id="4-4-Docker-容器化"><a href="#4-4-Docker-容器化" class="headerlink" title="4.4 Docker 容器化"></a>4.4 Docker 容器化</h3><ul>
+<li>Docker 基础命令和镜像构建</li>
+<li>Docker Compose 的配置与使用</li>
+<li>容器内的日志与调试</li>
+</ul>
+<hr>
+<h2 id="五、高级主题"><a href="#五、高级主题" class="headerlink" title="五、高级主题"></a>五、高级主题</h2><h3 id="5-1-性能优化"><a href="#5-1-性能优化" class="headerlink" title="5.1 性能优化"></a>5.1 性能优化</h3><ul>
+<li>内存优化：逃逸分析与栈分配</li>
+<li>并发性能优化（channel 与锁优化）</li>
+<li>调优工具（pprof、trace、expvar）</li>
+</ul>
+<h3 id="5-2-微服务架构"><a href="#5-2-微服务架构" class="headerlink" title="5.2 微服务架构"></a>5.2 微服务架构</h3><ul>
+<li>微服务架构的设计与通信</li>
+<li>RPC 框架（gRPC）和 Protobuf 使用</li>
+<li>服务发现与负载均衡（etcd、consul）</li>
+</ul>
+<h3 id="5-3-日志与监控"><a href="#5-3-日志与监控" class="headerlink" title="5.3 日志与监控"></a>5.3 日志与监控</h3><ul>
+<li>日志收集与管理（logrus、zap）</li>
+<li>使用 Prometheus、Grafana 监控</li>
+<li>链路追踪（OpenTelemetry）</li>
+</ul>
+<h3 id="5-4-安全"><a href="#5-4-安全" class="headerlink" title="5.4 安全"></a>5.4 安全</h3><ul>
+<li>Go 应用中的常见安全漏洞防护</li>
+<li>OAuth2.0 和 JWT 鉴权实现</li>
+<li>数据加密与签名</li>
+</ul>
+<hr>
+<h2 id="六、DevOps-实践"><a href="#六、DevOps-实践" class="headerlink" title="六、DevOps 实践"></a>六、DevOps 实践</h2><h3 id="6-1-自动化测试"><a href="#6-1-自动化测试" class="headerlink" title="6.1 自动化测试"></a>6.1 自动化测试</h3><ul>
+<li>持续集成与自动化测试</li>
+<li>自动化测试策略与测试覆盖率</li>
+<li>使用 Docker 进行端到端测试</li>
+</ul>
+<h3 id="6-2-部署与发布"><a href="#6-2-部署与发布" class="headerlink" title="6.2 部署与发布"></a>6.2 部署与发布</h3><ul>
+<li>使用 Kubernetes 部署 Go 项目</li>
+<li>GitOps 实践（ArgoCD、Flux）</li>
+<li>版本控制与发布策略</li>
+</ul>
+<h3 id="6-3-监控与运维"><a href="#6-3-监控与运维" class="headerlink" title="6.3 监控与运维"></a>6.3 监控与运维</h3><ul>
+<li>系统日志分析与错误排查</li>
+<li>基于 Prometheus 和 Grafana 的监控</li>
+<li>运维自动化与健康检查</li>
+</ul>
+<hr>
+<h2 id="七、学习资源"><a href="#七、学习资源" class="headerlink" title="七、学习资源"></a>七、学习资源</h2><h3 id="7-1-官方文档"><a href="#7-1-官方文档" class="headerlink" title="7.1 官方文档"></a>7.1 官方文档</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://golang.org/doc/">Go 官方文档</a></li>
+</ul>
+<h3 id="7-2-在线学习平台"><a href="#7-2-在线学习平台" class="headerlink" title="7.2 在线学习平台"></a>7.2 在线学习平台</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://gobyexample.com/">Go by Example</a></li>
+<li><a target="_blank" rel="noopener" href="https://tour.golang.org/">Tour of Go</a></li>
+</ul>
+<h3 id="7-3-推荐书籍"><a href="#7-3-推荐书籍" class="headerlink" title="7.3 推荐书籍"></a>7.3 推荐书籍</h3><ul>
+<li>《The Go Programming Language》</li>
+<li>《Go in Action》</li>
+<li>《Go Microservices in Action》</li>
+</ul>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">怀光</div><div class="post-copyright__author_desc">不求遗泽千里，只留一念清泉</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2024/10/28/GoLang%E5%AE%8C%E6%95%B4%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E8%A1%8C/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2024/10/28/GoLang%E5%AE%8C%E6%95%B4%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E8%A1%8C/')">GoLang完整学习路线</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2024/10/28/GoLang%E5%AE%8C%E6%95%B4%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E8%A1%8C/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=GoLang完整学习路线&amp;url=http://example.com/2024/10/28/GoLang%E5%AE%8C%E6%95%B4%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E8%A1%8C/&amp;pic=/img/golang.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">怀光长纵</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/Golang/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Golang<span class="tagsPageCount">5</span></a><a class="post-meta__box__tags" href="/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>服务端<span class="tagsPageCount">5</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="/img/default_back.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/10/28/Go%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_back.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Go语言概述</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2024/10/28/Go-HelloWorld/" title="Go-HelloWorld"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_back.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-10-28</div><div class="title">Go-HelloWorld</div></div></a></div><div><a href="/2024/10/28/Go-%E7%BC%96%E8%AF%91%E4%B8%8E%E8%BF%90%E8%A1%8C/" title="Go-编译与运行"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_back.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-10-28</div><div class="title">Go-编译与运行</div></div></a></div><div><a href="/2024/10/28/Go%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" title="Go语言概述"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_back.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-10-28</div><div class="title">Go语言概述</div></div></a></div><div><a href="/2024/10/28/Go%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" title="Go语言环境安装"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_back.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-10-28</div><div class="title">Go语言环境安装</div></div></a></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="怀光" target="_blank">怀光</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">1</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Golang/" style="font-size: 0.88rem;">Golang<sup>5</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" style="font-size: 0.88rem;">服务端<sup>5</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="7842958653" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/7842958653&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 怀光 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
